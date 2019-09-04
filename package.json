@@ -4,5 +4,8 @@
         "cypress-cucumber-preprocessor": "^1.16.0",
         "cypress-dark": "^1.7.14",
         "cypress-xpath": "^1.4.0"
+    },
+    "cypress-cucumber-preprocessor": {
+        "nonGlobalStepDefinitions": true
     }
 }

@@ -10,8 +10,6 @@ describe("Test EA Application", () => {
         cy.get("@user").then((user) => {
             cy.login(user.UserName,user.Password);
         })
-
-
     })
 
     it("Performing Benefit check", () => {
