@@ -9,4 +9,4 @@
 3. 
     `npx cypress run --spec /Users/jiyuan/Documents/ADP/UdemyCypress/cypress/integration/examples/ea.spec.js --browser chrome`
 
-    **status: section5, video 22**
+    **status: section5, video 23**
