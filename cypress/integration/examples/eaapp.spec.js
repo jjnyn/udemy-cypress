@@ -4,36 +4,17 @@ describe("Test EA Application", () => {
 
     before("Login to application", () => {
         //Visiting website
-        cy.visit("http://eaapp.somee.com/");
+        cy.visit("/");
         cy.fixture("eauser").as("user");
+
+        cy.get("@user").then((user) => {
+            cy.login(user.UserName,user.Password);
+        })
+
 
     })
 
     it("Performing Benefit check", () => {
-
-        //long way of working with Promise (closure)
-        //cy.get("#loginLink").then(($link) => {
-        //    return $link.text();
-        //}).as("linkText");
-        
-        //shorten way of working with promise using invoke
-        cy.get("#loginLink").invoke('text').as("linkText");
-    
-        cy.contains("Login").click();
-    
-        cy.get("@linkText").then(($x) => {
-            expect($x).is.eql("Login");
-        })
-    
-        cy.url().should("include","/Account/Login");
-
-        cy.get("@user").then((user) => {
-            cy.get("#UserName").type(user.UserName);
-            cy.get("#Password").type(user.Password);
-        })
-        
-        cy.get(".btn").click({force: true});
-    
         //Click employee list
         cy.contains("Employee List").click();
     
