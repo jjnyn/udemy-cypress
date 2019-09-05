@@ -16,8 +16,8 @@ context("Test API from the Fake JSON Server", () => {
     it("Test GET functionality of JSON Server", () => {
         cy.request("http://localhost:3000/posts/1").its("body").should("have.property","id");
     })
-    
-    it.only("Test POST functionality of JSON Server", () => {
+
+    it("Test POST functionality of JSON Server", () => {
         cy.request({
             method: "POST",
             url: "http://localhost:3000/posts",
@@ -30,4 +30,15 @@ context("Test API from the Fake JSON Server", () => {
             expect(res.body).has.property("title","Executeautomation");
         })
     })
+
+    // it.only("API Testing", () => {
+
+    //     cy.request({
+    //         method: "POST",
+    //         url: "http://eaapp.somee.com/Account/Login",
+    //         body: {
+                
+    //         }
+    //     })
+    // })
 })
