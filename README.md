@@ -16,4 +16,5 @@
 2. Uncomment:
     `Ctrl+K+U`
 
+## Course Info
     **status: section 7, video 29**
