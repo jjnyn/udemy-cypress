@@ -1,5 +1,5 @@
 import { Given } from "cypress-cucumber-preprocessor/steps"
-
+import {loginPage} from "../../examples/pages/ealoginpage"
 
 Given(`I visit EA Site`, () => {
     //Visit ExecuteAutomation Website
@@ -21,9 +21,12 @@ Given(`I click login link`, () => {
 Given(`I login as following`, datatable => {
 
     datatable.hashes().forEach(row => {
-        cy.get('#UserName').type(row.userName);
-        cy.get('#Password').type(row.Password,{log:false});
+        // cy.get('#UserName').type(row.userName);
+        // cy.get('#Password').type(row.Password,{log:false});
+        loginPage.performLogin(row.userName,row.Password);
     });
 
-    cy.get('.btn').click();
+    //instead of direct click
+    //cy.get('.btn').click();
+    loginPage.clickLoginButton();
 })
