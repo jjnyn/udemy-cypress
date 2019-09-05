@@ -26,7 +26,7 @@ Given(`I login as following`, datatable => {
         loginPage.performLogin(row.userName,row.Password);
     });
 
-    //instead of direct click
+    //Instead of direct click
     //cy.get('.btn').click();
     loginPage.clickLoginButton();
 })
