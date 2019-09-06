@@ -20,4 +20,4 @@
     `Ctrl+K+U`
 
 ## Course Info
-    **status: done**
+    ** status: done **
