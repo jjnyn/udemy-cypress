@@ -13,7 +13,22 @@
 
 const cucumber = require('cypress-cucumber-preprocessor').default
 module.exports = (on, config) => {
+  
+  //cucumber
   on("file:preprocessor",cucumber())
+
+  //browser launch
+  on("before:browser:launch",(browser = {}, args) => {
+    if(browser.name === "chrome"){
+      //args.push('--start-fullscreen')
+      //args.push('--incognito')
+      return args;
+    }
+    if(browser.name === "electron"){
+      args["fullscreen"] = false
+      return args
+    }
+  })
 }
 
 
