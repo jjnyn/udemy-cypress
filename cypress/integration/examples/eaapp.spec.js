@@ -12,7 +12,9 @@ describe("Test EA Application", () => {
         })
     })
 
+
     it("Performing Benefit check", () => {
+        cy.percySnapshot();
         //Click employee list
         cy.contains("Employee List").click();
     
@@ -31,6 +33,7 @@ describe("Test EA Application", () => {
         //cy.get(".table").find("tr > td").then(($td) => {
         //    cy.wrap($td).contains("John").invoke("wrap").parent().contains("Benefits").click();
         //})
+        cy.percySnapshot("After");
     })
 
     
